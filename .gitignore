@@ -1,3 +1,7 @@
+access_token
+client_id
+client_secret
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
