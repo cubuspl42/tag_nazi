@@ -17,14 +17,18 @@ for post in feed['data']:
     message = post['message']
     print(post_id, '"%s"' % message)
     is_tagged = re.match(tag_regex, message)
-    if not is_tagged:
+    if is_tagged:
+        print('tagged')
+    else:
         print('not tagged')
         try:
             comments = post['comments']['data']
             commenters = [c['from']['id'] for c in comments]
         except KeyError:
             commenters = []
-        if not app_user_id in commenters:
+        if app_user_id in commenters:
+            print('already commented')
+        else:
             print('adding comment')
             payload['message'] = warning_text
             r = requests.post(graph + '/%s/comments' % post_id, payload)
