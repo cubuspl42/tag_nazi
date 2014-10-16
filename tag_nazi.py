@@ -3,7 +3,7 @@ import requests
 
 graph = 'https://graph.facebook.com'
 app_user_id = '375991845883325' # Strażnik Tagów @ Tag Nazi
-group_id = '1508885209354773'
+group_id = '723879221030413' # PG Informatyka 2014 stacjonarne I stopnia
 access_token = open('access_token').read()
 payload = { 'access_token': access_token }
 tag_regex = r'(\[\w+\])'
